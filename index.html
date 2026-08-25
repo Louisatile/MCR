@@ -55,6 +55,17 @@
   }
   .mcr-header .mcr-nav-cta:hover { background: #EDE4D3; color: #17251F !important; border-color: #EDE4D3; }
 
+  .mcr-nav-links { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+  .mcr-burger {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    width: 32px; height: 32px; background: transparent; border: none; cursor: pointer;
+    padding: 0; z-index: 210; flex-shrink: 0;
+  }
+  .mcr-burger span { display: block; width: 100%; height: 2px; background: #EDE4D3; border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; }
+  .mcr-burger.mcr-burger-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .mcr-burger.mcr-burger-active span:nth-child(2) { opacity: 0; }
+  .mcr-burger.mcr-burger-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
   .mcr-hero-inner {
     position: relative;
     padding: 80px 6% 90px;
@@ -105,8 +116,15 @@
   }
 
   @media (max-width: 780px) {
-    .mcr-header nav a.mcr-nav-link { display: none; }
+    .mcr-header .mcr-nav-links { display: none; }
+    .mcr-header .mcr-burger { display: flex; }
     .mcr-header { padding: 14px 5%; }
+    .mcr-nav-links.mcr-nav-open {
+      display: flex; position: fixed; inset: 0; background: #17251F;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 30px; z-index: 200;
+    }
+    .mcr-nav-links.mcr-nav-open a.mcr-nav-link { font-size: 20px; }
   }
   @media (max-width: 640px) {
     .mcr-hero-inner { padding: 60px 6% 60px; }
@@ -136,12 +154,41 @@
 
     </div>
     <nav>
-      <a class="mcr-nav-link" href="services.html">Services</a>
-      <a class="mcr-nav-link" href="about.html">About</a>
-      <a class="mcr-nav-link" href="gallery.html">Recent Projects</a>
+      <div class="mcr-nav-links" id="mcrNavLinks">
+        <a class="mcr-nav-link" href="services.html">Services</a>
+        <a class="mcr-nav-link" href="about.html">About</a>
+        <a class="mcr-nav-link" href="gallery.html">Recent Projects</a>
+      </div>
       <a class="mcr-nav-cta" href="get-in-touch.html">Get in touch</a>
+      <button class="mcr-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mcrNavLinks">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
+  <script>
+  (function(){
+    var burger = document.querySelector('.mcr-burger');
+    var navLinks = document.getElementById('mcrNavLinks');
+    if(!burger || !navLinks) return;
+    function closeMenu(){
+      navLinks.classList.remove('mcr-nav-open');
+      burger.classList.remove('mcr-burger-active');
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    }
+    function openMenu(){
+      navLinks.classList.add('mcr-nav-open');
+      burger.classList.add('mcr-burger-active');
+      burger.setAttribute('aria-expanded','true');
+      document.body.style.overflow = 'hidden';
+    }
+    burger.addEventListener('click', function(){
+      navLinks.classList.contains('mcr-nav-open') ? closeMenu() : openMenu();
+    });
+    navLinks.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+  })();
+  </script>
 
   <div class="mcr-hero-inner">
     <h1>Maltings Carpentry<br>&amp; Renovations</h1>
