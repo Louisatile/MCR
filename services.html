@@ -188,7 +188,7 @@
     opacity: 0;
   }
   .mcr-svc-card.mcr-open .mcr-svc-detail {
-    max-height: 300px;
+    max-height: 340px;
     opacity: 1;
     margin-top: 14px;
   }
@@ -197,6 +197,13 @@
     border-top: 1px solid rgba(237,228,211,0.15);
     padding-top: 14px;
   }
+  .mcr-svc-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: #C4A77C; font-size: 13px; font-weight: 700; text-decoration: none;
+    margin-top: 14px;
+  }
+  .mcr-svc-cta svg { width: 14px; height: 14px; transition: transform 0.25s ease; }
+  .mcr-svc-cta:hover svg { transform: translateX(3px); }
 
   /* ===== FLAT-PACK CALLOUT ===== */
   .mcr-flatpack {
@@ -256,33 +263,53 @@
     transition: border-color 0.3s ease, color 0.3s ease;
   }
   .mcr-town-pills span:hover { border-color: #C4A77C; color: #EDE4D3; }
+
   .mcr-further {
-    max-width: 620px; margin: 0 auto;
-    background: rgba(196,167,124,0.08);
-    border: 1px solid rgba(196,167,124,0.3);
-    border-radius: 14px;
-    padding: 28px 32px;
-    box-sizing: border-box;
+    max-width: 900px; margin: 0 auto; padding-top: 46px;
+    border-top: 1px solid rgba(237,228,211,0.14);
   }
-  .mcr-further h4 {
+  .mcr-further > p {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14.5px; line-height: 1.7; color: #cdd8d1; margin: 0 0 34px;
+    max-width: 520px; margin-left: auto; margin-right: auto;
+  }
+  .mcr-further-options {
+    display: flex; text-align: left;
+  }
+  .mcr-fo-item {
+    flex: 1 1 0; padding: 0 34px; box-sizing: border-box;
+  }
+  .mcr-fo-item + .mcr-fo-item {
+    border-left: 1px solid rgba(237,228,211,0.14);
+  }
+  .mcr-fo-icon {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(196,167,124,0.12);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+  }
+  .mcr-fo-icon svg { width: 18px; height: 18px; }
+  .mcr-fo-item h4 {
     font-family: 'Poppins', Arial, sans-serif;
-    font-size: 16px; font-weight: 400; margin: 0 0 10px; color: #C4A77C;
+    font-size: 17px; font-weight: 300; margin: 0 0 8px; color: #EDE4D3;
   }
-  .mcr-further p {
+  .mcr-fo-item p {
     font-family: 'Inter', Arial, sans-serif;
-    font-size: 14px; line-height: 1.7; color: #cdd8d1; margin: 0 0 20px;
+    font-size: 13.5px; line-height: 1.65; color: #b7c0ba; margin: 0 0 20px;
   }
-  .mcr-further-contact {
-    display: flex; flex-wrap: wrap; gap: 22px; margin: 0 0 22px;
+  .mcr-fo-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Inter', Arial, sans-serif; font-size: 13px; font-weight: 700;
+    text-decoration: none; padding: 12px 22px; white-space: nowrap;
   }
-  .mcr-further-contact a {
-    display: flex; align-items: center; gap: 9px;
-    color: #EDE4D3; font-size: 14px; font-weight: 500;
-    text-decoration: none; transition: color 0.25s ease;
-    font-family: 'Inter', Arial, sans-serif;
+  .mcr-fo-item.mcr-fo-form .mcr-fo-btn { background: #C4A77C; color: #17251F; }
+  .mcr-fo-item.mcr-fo-call .mcr-fo-btn { border: 1px solid rgba(237,228,211,0.4); color: #EDE4D3; }
+  .mcr-fo-item.mcr-fo-call .mcr-fo-btn:hover { background: rgba(237,228,211,0.08); }
+
+  @media (max-width: 640px) {
+    .mcr-further-options { flex-direction: column; gap: 34px; }
+    .mcr-fo-item { padding: 0; }
+    .mcr-fo-item + .mcr-fo-item { border-left: none; border-top: 1px solid rgba(237,228,211,0.14); padding-top: 34px; }
   }
-  .mcr-further-contact a svg { width: 16px; height: 16px; flex-shrink: 0; }
-  .mcr-further-contact a:hover { color: #C4A77C; }
 
   .mcr-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .mcr-reveal.mcr-visible { opacity: 1; transform: translateY(0); }
@@ -356,7 +383,9 @@
       </div>
       <h3>Bespoke Joinery &amp; Fitted Furniture</h3>
       <p class="mcr-svc-teaser">Fitted wardrobes, alcove cabinets, built-in storage, media units and bookcases.</p>
-      <div class="mcr-svc-detail"><p>Every piece is measured on site and made to order, so there's no wasted space and no compromise on fit or finish, even in awkward alcoves or sloped ceilings. We also handle general carpentry repairs and snagging lists, no job too small.</p></div>
+      <div class="mcr-svc-detail"><p>Every piece is measured on site and made to order, so there's no wasted space and no compromise on fit or finish, even in awkward alcoves or sloped ceilings. We also handle general carpentry repairs and snagging lists, no job too small.</p>
+        <a class="mcr-svc-cta" href="get-in-touch.html?enquiry=Bespoke%20Joinery%20%26%20Fitted%20Furniture#contact-form">Enquire about your fitted furniture <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
     </div>
 
     <div class="mcr-svc-card mcr-reveal">
@@ -366,7 +395,9 @@
       </div>
       <h3>Kitchens</h3>
       <p class="mcr-svc-teaser">Kitchen fitting and installation, bespoke cabinetry and worktops built to last.</p>
-      <div class="mcr-svc-detail"><p>We handle the carpentry side of your kitchen project start to finish: installing base and wall units, fitting worktops, plinths and end panels, making sure everything sits square and level, even in older properties where walls and floors rarely are.</p></div>
+      <div class="mcr-svc-detail"><p>We handle the carpentry side of your kitchen project start to finish: installing base and wall units, fitting worktops, plinths and end panels, making sure everything sits square and level, even in older properties where walls and floors rarely are.</p>
+        <a class="mcr-svc-cta" href="get-in-touch.html?enquiry=Kitchens#contact-form">Enquire about your new kitchen <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
     </div>
 
     <div class="mcr-svc-card mcr-reveal">
@@ -376,7 +407,9 @@
       </div>
       <h3>Staircases</h3>
       <p class="mcr-svc-teaser">Repairs, replacements, balustrades and handrails, fitted with precision.</p>
-      <div class="mcr-svc-detail"><p>Whether it's a creaking step that needs sorting, a full replacement, or a new balustrade to modernise the look, staircases carry weight and safety concerns that need proper joinery, not a quick fix.</p></div>
+      <div class="mcr-svc-detail"><p>Whether it's a creaking step that needs sorting, a full replacement, or a new balustrade to modernise the look, staircases carry weight and safety concerns that need proper joinery, not a quick fix.</p>
+        <a class="mcr-svc-cta" href="get-in-touch.html?enquiry=Staircases#contact-form">Enquire about your staircase <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
     </div>
 
     <div class="mcr-svc-card mcr-reveal">
@@ -386,7 +419,9 @@
       </div>
       <h3>Doors, Windows &amp; Flooring</h3>
       <p class="mcr-svc-teaser">Internal and external doors, sash window restoration, plus hardwood floor fitting and repairs.</p>
-      <div class="mcr-svc-detail"><p>Door frames, skirting and architrave fitted properly, plus sash window repair and restoration for period properties. We finish flooring work with matching skirting boards so the whole room ties together.</p></div>
+      <div class="mcr-svc-detail"><p>Door frames, skirting and architrave fitted properly, plus sash window repair and restoration for period properties. We finish flooring work with matching skirting boards so the whole room ties together.</p>
+        <a class="mcr-svc-cta" href="get-in-touch.html?enquiry=Doors%2C%20Windows%20%26%20Flooring#contact-form">Enquire about your doors or windows <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
     </div>
 
     <div class="mcr-svc-card mcr-reveal">
@@ -396,7 +431,9 @@
       </div>
       <h3>Renovations &amp; Extensions</h3>
       <p class="mcr-svc-teaser">Period property renovation and listed building carpentry, plus extensions across Suffolk.</p>
-      <div class="mcr-svc-detail"><p>Roof timbers, loft conversions and stud walls for extensions. We're comfortable working alongside builders and other trades on larger projects, and equally happy taking on the carpentry package for a full renovation on our own.</p></div>
+      <div class="mcr-svc-detail"><p>Roof timbers, loft conversions and stud walls for extensions. We're comfortable working alongside builders and other trades on larger projects, and equally happy taking on the carpentry package for a full renovation on our own.</p>
+        <a class="mcr-svc-cta" href="get-in-touch.html?enquiry=Renovations%20%26%20Extensions#contact-form">Enquire about your renovation <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
     </div>
 
     <div class="mcr-svc-card mcr-reveal">
@@ -406,7 +443,9 @@
       </div>
       <h3>Garden &amp; Outdoor</h3>
       <p class="mcr-svc-teaser">Decking, pergolas, sheds, fencing and gates built for the outdoors.</p>
-      <div class="mcr-svc-detail"><p>Built using timber and fixings suited to the exposure your garden actually gets. Good outdoor carpentry is as much about detailing against water and movement as it is about the finished look.</p></div>
+      <div class="mcr-svc-detail"><p>Built using timber and fixings suited to the exposure your garden actually gets. Good outdoor carpentry is as much about detailing against water and movement as it is about the finished look.</p>
+        <a class="mcr-svc-cta" href="get-in-touch.html?enquiry=Garden%20%26%20Outdoor#contact-form">Enquire about your garden project <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
     </div>
 
   </div>
@@ -435,17 +474,20 @@
     <span>Bury St Edmunds</span>
   </div>
   <div class="mcr-further mcr-reveal">
-    <h4>Further away?</h4>
     <p>If you're outside these areas, get in touch anyway. Depending on the size and location of the job, we're often able to make it work.</p>
-    <div class="mcr-further-contact">
-      <a href="tel:+447807062470">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        +44 7807 062470
-      </a>
-      <a href="mailto:MaltingsCarpentryRenovation@gmail.com" style="word-break:break-all;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 7l10 6 10-6"></path></svg>
-        MaltingsCarpentryRenovation@gmail.com
-      </a>
+    <div class="mcr-further-options">
+      <div class="mcr-fo-item mcr-fo-form">
+        <div class="mcr-fo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 7l10 6 10-6"></path></svg></div>
+        <h4>Fill in our form</h4>
+        <p>Tell us a bit about your project and we'll come back to you within 2 working days.</p>
+        <a class="mcr-fo-btn" href="get-in-touch.html#contact-form">Get in touch</a>
+      </div>
+      <div class="mcr-fo-item mcr-fo-call">
+        <div class="mcr-fo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+        <h4>Prefer to talk?</h4>
+        <p>Call or text us directly, we're happy to chat it through.</p>
+        <a class="mcr-fo-btn" href="tel:+447807062470">07807 062470</a>
+      </div>
     </div>
   </div>
 </section>
@@ -583,7 +625,7 @@
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
       <a href="gallery.html">Recent Projects</a>
-      <a href="get-in-touch.html">Get in touch</a>
+      <a href="get-in-touch.html#contact-form">Get in touch</a>
     </div>
 
     <div class="mcr-footer-col">
