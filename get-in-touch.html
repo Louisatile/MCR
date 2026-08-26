@@ -163,9 +163,9 @@
         <a class="mcr-nav-link" href="services.html">Services</a>
         <a class="mcr-nav-link" href="about.html">About</a>
         <a class="mcr-nav-link" href="gallery.html">Recent Projects</a>
-        <a class="mcr-nav-link mcr-nav-link-cta" href="get-in-touch.html">Get in touch</a>
+        <a class="mcr-nav-link mcr-nav-link-cta" href="get-in-touch.html#contact-form">Get in touch</a>
       </div>
-      <a class="mcr-nav-cta" href="get-in-touch.html">Get in touch</a>
+      <a class="mcr-nav-cta" href="get-in-touch.html#contact-form">Get in touch</a>
       <button class="mcr-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mcrNavLinks">
         <span></span><span></span><span></span>
       </button>
@@ -196,15 +196,32 @@
   })();
   </script>
 
-  <div class="mcr-gal-intro">
+  <div class="mcr-gal-intro mcr-getintouch-hero-intro">
     <div class="mcr-hero-eyebrow">HOW TO REACH US</div>
     <h1>Get in Touch</h1>
-    <p>Have a project in mind? Send us a few details below, or reach us directly by phone or email, and we'll get back to you to talk it through.</p>
+    <p>Tell us about your project below and we'll get back to you within 2 working days.</p>
+    <a class="mcr-hero-cta" href="#contact-form">Get in touch</a>
   </div>
 </div>
 
 <style>
-  .mcr-getintouch-section { background: #EDE4D3; padding: 60px 6% 20px; }
+  .mcr-getintouch-hero-intro { padding: 70px 6% 44px; }
+  .mcr-hero-cta {
+    display: inline-block; margin-top: 26px; background: #C4A77C; color: #17251F;
+    padding: 15px 32px; min-height: 44px; box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif; font-size: 15px; font-weight: 700;
+    letter-spacing: 0.4px; text-decoration: none; border-radius: 2px; transition: background 0.25s ease;
+  }
+  .mcr-hero-cta:hover { background: #d8bd92; }
+
+  @media (max-width: 640px) {
+    .mcr-getintouch-hero-intro { padding: 44px 6% 32px; }
+    .mcr-hero-cta { display: block; width: 100%; text-align: center; padding: 16px 20px; }
+  }
+</style>
+
+<style>
+  .mcr-getintouch-section { background: #EDE4D3; padding: 30px 6% 20px; }
   .mcr-getintouch-wrap {
     max-width: 700px; margin: 0; text-align: left;
     font-family: 'Inter', Arial, sans-serif;
@@ -242,16 +259,109 @@
     color: #17251F; text-decoration: none; overflow-wrap: break-word; word-break: break-word;
   }
   .mcr-optC-item a:hover { color: #384D48; }
+
+  /* ===== Contact form ===== */
+  .mcr-form-wrap {
+    max-width: 620px; margin-top: 20px; display: flex; flex-direction: column; gap: 16px;
+  }
+  .mcr-form-row { display: flex; gap: 18px; flex-wrap: wrap; }
+  .mcr-form-field { flex: 1 1 240px; display: flex; flex-direction: column; gap: 6px; }
+  .mcr-form-field label {
+    font-family: 'Inter', Arial, sans-serif; font-size: 12.5px; font-weight: 700;
+    letter-spacing: 0.6px; text-transform: uppercase; color: #8A6F45;
+  }
+  .mcr-form-field input, .mcr-form-field textarea {
+    font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #17251F;
+    background: #FBF8F2; border: 1px solid rgba(23,37,31,0.18);
+    padding: 12px 14px; border-radius: 2px; width: 100%; outline: none;
+    box-sizing: border-box;
+  }
+  .mcr-form-field input:focus, .mcr-form-field textarea:focus { border-color: #8A6F45; }
+  .mcr-form-field textarea { resize: vertical; min-height: 110px; font-family: 'Inter', Arial, sans-serif; }
+  .mcr-form-submit {
+    align-self: flex-start; background: #17251F; color: #EDE4D3; border: none;
+    padding: 15px 34px; min-height: 48px; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; border-radius: 0;
+    transition: background 0.25s ease;
+  }
+  .mcr-form-submit:hover { background: #384D48; }
+
+  @media (max-width: 640px) {
+    .mcr-form-row { flex-direction: column; gap: 16px; }
+    .mcr-form-submit { align-self: stretch; width: 100%; }
+  }
+  .mcr-form-note { font-size: 13px; color: #4A5A55; margin-top: -4px; }
+  .mcr-form-success {
+    display: none; background: #384D48; color: #EDE4D3; padding: 18px 20px;
+    font-family: 'Inter', Arial, sans-serif; font-size: 15px; max-width: 620px; margin-top: 20px;
+  }
 </style>
 
-<div class="mcr-getintouch-section">
+<div class="mcr-getintouch-section" id="contact-form">
   <div class="mcr-getintouch-wrap">
     <div class="mcr-eyebrow-dark">HOW TO CONTACT US</div>
     <h2>Let's talk about your next project</h2>
-    <p>Whether you've got a clear brief already sketched out, or just a rough idea you're still turning over, we're happy to talk it through. Tell us what you've got in mind, the space you're working with, and roughly when you'd like it done, and we'll come back to you with honest advice on what's possible.</p>
-    <p>Most jobs start with a quick chat and, where useful, a visit to take a look and take some measurements. There's no pressure and no obligation, just a straightforward conversation about your project.</p>
+    <p>Whether you've got a clear brief or just a rough idea, tell us a bit about it below and we'll come back to you with honest advice on what's possible.</p>
+
+    <form class="mcr-form-wrap" id="mcr-contact-form" action="https://formspree.io/f/xljerryb" method="POST">
+      <div class="mcr-form-row">
+        <div class="mcr-form-field">
+          <label for="mcr-first-name">First name</label>
+          <input type="text" id="mcr-first-name" name="First name" required>
+        </div>
+        <div class="mcr-form-field">
+          <label for="mcr-last-name">Last name</label>
+          <input type="text" id="mcr-last-name" name="Last name" required>
+        </div>
+      </div>
+      <div class="mcr-form-row">
+        <div class="mcr-form-field">
+          <label for="mcr-email">Email or phone number</label>
+          <input type="text" id="mcr-email" name="Email or phone" required>
+        </div>
+        <div class="mcr-form-field">
+          <label for="mcr-location">Location of your project</label>
+          <input type="text" id="mcr-location" name="Project location">
+        </div>
+      </div>
+      <div class="mcr-form-field">
+        <label for="mcr-details">Tell us about your project</label>
+        <textarea id="mcr-details" name="Project details" required></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="New enquiry from Maltings website">
+      <input type="text" name="_gotcha" style="display:none">
+      <button type="submit" class="mcr-form-submit">Send message</button>
+    </form>
+
+    <div class="mcr-form-success" id="mcr-form-success">Thanks — your message has been sent. We'll be in touch within 2 working days.</div>
   </div>
 </div>
+
+<script>
+  (function() {
+    var form = document.getElementById('mcr-contact-form');
+    var success = document.getElementById('mcr-form-success');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          alert('Sorry, something went wrong sending your message. Please try emailing us directly.');
+        }
+      }).catch(function() {
+        alert('Sorry, something went wrong sending your message. Please try emailing us directly.');
+      });
+    });
+  })();
+</script>
 
 <div class="mcr-optC-section">
   <div class="mcr-optC-list">
@@ -448,7 +558,7 @@
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
       <a href="gallery.html">Recent Projects</a>
-      <a href="get-in-touch.html">Get in touch</a>
+      <a href="get-in-touch.html#contact-form">Get in touch</a>
     </div>
 
     <div class="mcr-footer-col">
