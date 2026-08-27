@@ -539,7 +539,6 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-top: 46px;
     padding: 14px 30px;
     border: 1px solid #C4A77C;
     border-radius: 4px;
@@ -553,6 +552,30 @@
   .mcr-recent-projects-link svg { width: 16px; height: 16px; transition: transform 0.25s ease; }
   .mcr-recent-projects-link:hover svg { transform: translateX(4px); }
 
+  .mcr-gallery-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 46px;
+  }
+  .mcr-instagram-follow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: #C4A77C;
+    border: 1px solid #C4A77C;
+    border-radius: 4px;
+    color: #17251F;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+  .mcr-instagram-follow-link:hover { background: #17251F; color: #EDE4D3; border-color: #17251F; }
+  .mcr-instagram-follow-link svg { width: 16px; height: 16px; }
+
   @media (max-width: 900px) {
     .mcr-slide { flex: 0 0 calc((100% - 16px) / 2); }
   }
@@ -563,21 +586,6 @@
     .mcr-slide-next { right: 4px; }
   }
 </style>
-
-<section class="mcr-gallery-slideshow" id="gallery">
-  <h2>Craftsmanship<br>in every detail</h2>
-  <p>Follow along for our latest carpentry and renovation projects, straight from Instagram.</p>
-
-  <div class="mcr-instagram-wrap">
-    <div class="sk-instagram-feed" data-embed-id="25708851"></div>
-    <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
-  </div>
-
-  <a class="mcr-recent-projects-link" href="gallery.html">
-    View recent projects
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-  </a>
-</section>
 
 <style>
   .mcr-instagram-wrap {
@@ -772,152 +780,48 @@
 <style>
   .mcr-contact-header {
     font-family: 'Inter', Arial, sans-serif;
-    background: linear-gradient(180deg, #384D48 0%, #0F211C 45%);
-    color: #EDE4D3;
-    padding: 90px 6% 60px;
+    background: #EDE4D3;
+    color: #17251F;
+    padding: 90px 6%;
     text-align: center;
   }
   .mcr-contact-header .mcr-eyebrow {
-    font-size: 12px; letter-spacing: 2px; color: #C4A77C; font-weight: 600; margin-bottom: 18px;
+    font-size: 12px; letter-spacing: 2px; color: #8a6f45; font-weight: 700; margin-bottom: 18px;
   }
   .mcr-contact-header h2 {
     font-family: 'Poppins', Arial, sans-serif;
     font-size: clamp(26px, 4.5vw, 44px);
     font-weight: 300;
-    letter-spacing: 0.079em;
+    letter-spacing: 0.06em;
     line-height: 1.25;
     margin: 0 0 14px;
+    color: #17251F;
   }
-  .mcr-contact-header p { color: #b7c1ba; font-size: 16px; margin: 0; }
+  .mcr-contact-header p { color: #4A4A42; font-size: 16px; max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+  .mcr-contact-header .mcr-cta-btn {
+    display: inline-block;
+    background: #17251F;
+    color: #EDE4D3;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 15px 38px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.25s ease;
+  }
+  .mcr-contact-header .mcr-cta-btn:hover { background: #384D48; }
 
   @media (max-width: 560px) {
-    .mcr-contact-header { padding: 60px 6% 40px; }
+    .mcr-contact-header { padding: 60px 6%; }
   }
 </style>
 
 <section class="mcr-contact-header" id="contact">
   <div class="mcr-eyebrow">SERVING SUFFOLK WITH SKILLED CARPENTRY</div>
   <h2>Upgrade your home.<br>Book today.</h2>
-  <p>Give us a call or drop us an email and we'll be in touch to discuss your project.</p>
+  <p>Tell us about your project and we'll get back to you within 2 working days with honest advice and a clear next step.</p>
+  <a class="mcr-cta-btn" href="get-in-touch.html#contact-form">Get a free quote</a>
 </section>
-
-
-<!-- ==================== -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-<style>
-  .mcr-contact-body {
-    background: #0F211C;
-    padding: 0 6% 100px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-  }
-  @media (max-width: 640px) {
-    .mcr-contact-body { padding: 0 6% 60px; }
-  }
-</style>
-
-<div class="mcr-contact-body">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-<style>
-  .mcr-contact-side {
-    font-family: 'Inter', Arial, sans-serif;
-    background: #16302A;
-    border-radius: 14px;
-    color: #EDE4D3;
-    width: 100%;
-    max-width: 760px;
-    padding: 40px 44px 44px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  .mcr-contact-side .mcr-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: rgba(196,167,124,0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 22px;
-  }
-  .mcr-contact-side .mcr-icon svg {
-    width: 22px;
-    height: 22px;
-  }
-  .mcr-contact-side h3 {
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 22px;
-    font-weight: 300;
-    letter-spacing: 0.079em;
-    margin: 0 0 14px;
-    line-height: 1.3;
-  }
-  .mcr-contact-side p {
-    color: #b7c1ba;
-    font-size: 15px;
-    line-height: 1.7;
-    margin: 0 0 32px;
-  }
-  .mcr-contact-side .mcr-divider {
-    height: 1px;
-    background: #2c3c36;
-    margin: 0 0 28px;
-  }
-  .mcr-contact-side .mcr-call-label {
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #8a978f;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .mcr-contact-side .mcr-call-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #EDE4D3;
-    font-size: 22px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.25s ease;
-  }
-  .mcr-contact-side .mcr-call-link:hover { color: #C4A77C; }
-  .mcr-contact-side .mcr-call-link svg {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 640px) {
-    .mcr-contact-side { min-height: auto; padding: 30px 6% 40px; }
-    .mcr-contact-side .mcr-call-link { font-size: 19px; }
-  }
-</style>
-
-<div class="mcr-contact-side">
-  <div class="mcr-icon">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
-  </div>
-  <h3>We'll be in touch fast</h3>
-  <p>We aim to respond to every enquiry within 2 working days, with honest advice on your project and a clear next step.</p>
-  <div class="mcr-divider"></div>
-  <div class="mcr-call-label">Prefer to call?</div>
-  <a class="mcr-call-link" href="tel:+447807062470" style="font-size:16px;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-    +44 7807 062470
-  </a>
-  <div class="mcr-call-label" style="margin-top:26px;">Prefer to email?</div>
-  <a class="mcr-call-link" href="mailto:MaltingsCarpentryRenovation@gmail.com" style="font-size:16px; word-break:break-all;">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#C4A77C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" style="display:none"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 7l10 6 10-6"></path></svg>
-    MaltingsCarpentryRenovation@gmail.com
-  </a>
-</div>
-</div>
 
 
 <!-- ==================== -->
@@ -1017,6 +921,61 @@
     .mcr-footer-bottom { flex-direction: column; }
   }
 </style>
+
+<style>
+  .mcr-gallery-slideshow.mcr-light {
+    background: #FFFFFF;
+    color: #17251F;
+  }
+  .mcr-gallery-slideshow.mcr-light p { color: #5C5C54; }
+  .mcr-gallery-slideshow.mcr-light .mcr-recent-projects-link {
+    border-color: #17251F;
+    color: #17251F;
+  }
+  .mcr-gallery-slideshow.mcr-light .mcr-recent-projects-link:hover {
+    background: #17251F;
+    color: #EDE4D3;
+  }
+  .mcr-gallery-slideshow.mcr-light .mcr-instagram-follow-link:hover {
+    background: #17251F;
+    color: #EDE4D3;
+    border-color: #17251F;
+  }
+  .mcr-instagram-wrap.mcr-one-row {
+    max-height: 300px;
+    overflow: hidden;
+    position: relative;
+  }
+  .mcr-instagram-wrap.mcr-one-row::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 60px;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #FFFFFF 100%);
+    pointer-events: none;
+  }
+</style>
+
+<section class="mcr-gallery-slideshow mcr-light" id="gallery">
+  <h2>Craftsmanship<br>in every detail</h2>
+  <p>Follow along for our latest carpentry and renovation projects, straight from Instagram.</p>
+
+  <div class="mcr-instagram-wrap mcr-one-row">
+    <div class="sk-instagram-feed" data-embed-id="25708851"></div>
+    <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
+  </div>
+
+  <div class="mcr-gallery-btn-row">
+    <a class="mcr-instagram-follow-link" href="https://www.instagram.com/maltingscarpentry/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      Follow us on Instagram
+    </a>
+    <a class="mcr-recent-projects-link" href="gallery.html">
+      View recent projects
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+    </a>
+  </div>
+</section>
 
 <footer class="mcr-footer">
   <div class="mcr-footer-grid">
