@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maltings Carpentry & Renovations | Independent Suffolk Carpenter</title>
 <meta name="description" content="Independent, family-run carpentry and renovations business covering Suffolk including Ipswich, Saxmundham, Woodbridge, Aldeburgh, Framlingham, Stowmarket and Bury St Edmunds.">
-<style>* { margin:0; padding:0; box-sizing:border-box; } body { -webkit-font-smoothing: antialiased; }</style>
+<style>* { margin:0; padding:0; box-sizing:border-box; } html { scroll-behavior: smooth; } body { -webkit-font-smoothing: antialiased; } section[id] { scroll-margin-top: 90px; }</style>
 </head>
 <body>
 
@@ -39,9 +39,14 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 14px;
-    position: relative;
     width: 100%;
     box-sizing: border-box;
+    transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+  }
+  .mcr-header.mcr-scrolled {
+    background: #17251F;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    padding: 10px 6%;
   }
   .mcr-header .mcr-logo-wrap { display: flex; align-items: center; gap: 12px; min-width: 0; flex-shrink: 0; }
   .mcr-header .mcr-logo-wrap a { display: block; }
@@ -335,40 +340,6 @@
   }
   .mcr-dark-card p { font-size: 13px; color: #cdd8d1; line-height: 1.55; margin: 0; }
 
-  .mcr-services-cta {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 50px;
-  }
-  .mcr-services-cta a.mcr-outline {
-    background: transparent;
-    color: #384D48;
-    border: 1px solid #384D48;
-  }
-  .mcr-services-cta a.mcr-outline:hover {
-    background: #384D48;
-    color: #EDE4D3;
-  }
-  .mcr-services-cta a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 15px 32px;
-    border-radius: 40px;
-    border: 1px solid #384D48;
-    color: #384D48;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.25s ease;
-  }
-  .mcr-services-cta a:hover {
-    background: #384D48;
-    color: #EDE4D3;
-    transform: translateY(-2px);
-  }
 
   .mcr-reveal {
     opacity: 0;
@@ -437,24 +408,8 @@
       <p>Decking, pergolas, sheds, fencing and gates built for the outdoors.</p>
     </a>
   </div>
-  <div class="mcr-services-cta mcr-reveal">
-    <a href="get-in-touch.html#contact-form">Get in touch</a>
-  </div>
 </section>
 
-<script>
-  (function() {
-    var els = document.querySelectorAll('.mcr-reveal');
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('mcr-visible');
-        }
-      });
-    }, { threshold: 0.15 });
-    els.forEach(function(el) { observer.observe(el); });
-  })();
-</script>
 
 
 <!-- ==================== -->
@@ -512,15 +467,15 @@
     align-items: center;
     gap: 10px;
     padding: 12px 26px;
-    border: 1px solid #17251F;
+    border: 1px solid #384D48;
     border-radius: 4px;
-    color: #17251F;
+    color: #384D48;
     font-size: 13.5px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.25s ease;
   }
-  .mcr-recent-projects-link:hover { background: #17251F; color: #EDE4D3; }
+  .mcr-recent-projects-link:hover { background: #384D48; color: #EDE4D3; }
   .mcr-recent-projects-link svg { width: 15px; height: 15px; transition: transform 0.25s ease; }
   .mcr-recent-projects-link:hover svg { transform: translateX(4px); }
 
@@ -545,7 +500,7 @@
     text-decoration: none;
     transition: all 0.25s ease;
   }
-  .mcr-instagram-follow-link:hover { background: #17251F; color: #EDE4D3; border-color: #17251F; }
+  .mcr-instagram-follow-link:hover { background: #384D48; color: #EDE4D3; border-color: #384D48; }
   .mcr-instagram-follow-link svg { width: 15px; height: 15px; }
 
   @media (max-width: 640px) {
@@ -600,6 +555,7 @@
     padding: 16px;
   }
   .mcr-stat .mcr-num { font-size: 26px; font-weight: 700; color: #C4A77C; }
+  .mcr-stat .mcr-num svg { width: 26px; height: 26px; display: block; }
   .mcr-stat .mcr-label {
     font-size: 11.5px; letter-spacing: 0.6px; text-transform: uppercase; color: #a9b3ac; margin-top: 6px;
   }
@@ -616,10 +572,31 @@
   }
 </style>
 
+<section class="mcr-about" id="about">
+  <div class="mcr-about-photo">
+    <img src="will-quote-photo.jpg" alt="Will, Maltings Carpentry &amp; Renovations">
+  </div>
+  <div class="mcr-about-body">
+    <div class="mcr-eyebrow mcr-reveal">OUR STORY</div>
+    <h2 class="mcr-reveal">An independent carpenter, trusted across Suffolk</h2>
+    <p class="mcr-reveal">Maltings Carpentry &amp; Renovations is an independent carpentry business based locally in Suffolk. With 15+ years' experience in the building industry, we bring precision, care and honest craftsmanship to every job.</p>
+    <p class="mcr-reveal">As a local, independent business, we bring the same attention to detail to every job, big or small, whether that's a fitted wardrobe or a full renovation. We cover Suffolk including Ipswich, Saxmundham, Woodbridge, Aldeburgh and Framlingham, and surrounding areas.</p>
+    <div class="mcr-about-stats mcr-reveal">
+      <div class="mcr-stat"><div class="mcr-num" data-count-to="15" data-suffix="+">0</div><div class="mcr-label">Years' Experience</div></div>
+      <div class="mcr-stat"><div class="mcr-num" data-count-to="100" data-suffix="%">0</div><div class="mcr-label">Independent &amp; Local</div></div>
+      <div class="mcr-stat"><div class="mcr-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg></div><div class="mcr-label">Fully Insured</div></div>
+      <div class="mcr-stat"><div class="mcr-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3.83A2 2 0 0 0 9.59 3.17L3 3l-.17 6.59a2 2 0 0 0 .58 1.42l9.58 9.58a2 2 0 0 0 2.83 0l4.77-4.77a2 2 0 0 0 0-2.83z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg></div><div class="mcr-label">Free Quotes</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <style>
   .mcr-reviews {
-    background: #FFFFFF;
+    background: #F7F6F3;
     padding: 42px 0 50px;
     overflow: hidden;
   }
@@ -654,7 +631,7 @@
     box-sizing: border-box;
   }
   .mcr-review-card .mcr-review-stars {
-    color: #C4A77C;
+    color: #384D48;
     font-size: 14px;
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -673,7 +650,7 @@
 </style>
 
 <section class="mcr-reviews">
-  <div class="mcr-eyebrow">WHAT CUSTOMERS SAY</div>
+  <div class="mcr-eyebrow mcr-reveal">WHAT CUSTOMERS SAY</div>
   <div class="mcr-reviews-track-wrap">
     <div class="mcr-reviews-track">
       <div class="mcr-review-card">
@@ -713,38 +690,17 @@
   </div>
 </section>
 
-<section class="mcr-about" id="about">
-  <div class="mcr-about-photo">
-    <img src="will-quote-photo.jpg" alt="Will, Maltings Carpentry &amp; Renovations">
-  </div>
-  <div class="mcr-about-body">
-    <div class="mcr-eyebrow">OUR STORY</div>
-    <h2>An independent carpenter, trusted across Suffolk</h2>
-    <p>Maltings Carpentry &amp; Renovations is an independent carpentry business based locally in Suffolk. With 15+ years' experience in the building industry, we bring precision, care and honest craftsmanship to every job.</p>
-    <p>As a local, independent business, we bring the same attention to detail to every job, big or small, whether that's a fitted wardrobe or a full renovation. We cover Suffolk including Ipswich, Saxmundham, Woodbridge, Aldeburgh and Framlingham, and surrounding areas.</p>
-    <div class="mcr-about-stats">
-      <div class="mcr-stat"><div class="mcr-num">15+</div><div class="mcr-label">Years' Experience</div></div>
-      <div class="mcr-stat"><div class="mcr-num">100%</div><div class="mcr-label">Independent &amp; Local</div></div>
-      <div class="mcr-stat"><div class="mcr-num">&#10003;</div><div class="mcr-label">Fully Insured</div></div>
-      <div class="mcr-stat"><div class="mcr-num">&#10003;</div><div class="mcr-label">Free Quotes</div></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ==================== -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 <style>
   .mcr-contact-header {
     font-family: 'Inter', Arial, sans-serif;
-    background: #EDE4D3;
-    color: #17251F;
+    background: #384D48;
+    color: #FFFFFF;
     padding: 90px 6%;
     text-align: center;
   }
   .mcr-contact-header .mcr-eyebrow {
-    font-size: 12px; letter-spacing: 2px; color: #8a6f45; font-weight: 700; margin-bottom: 18px;
+    font-size: 12px; letter-spacing: 2px; color: #C4A77C; font-weight: 700; margin-bottom: 18px;
   }
   .mcr-contact-header h2 {
     font-family: 'Poppins', Arial, sans-serif;
@@ -753,13 +709,13 @@
     letter-spacing: 0.06em;
     line-height: 1.25;
     margin: 0 0 14px;
-    color: #17251F;
+    color: #FFFFFF;
   }
-  .mcr-contact-header p { color: #4A4A42; font-size: 16px; max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+  .mcr-contact-header p { color: #d8e0dd; font-size: 16px; max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
   .mcr-contact-header .mcr-cta-btn {
     display: inline-block;
-    background: #17251F;
-    color: #EDE4D3;
+    background: #C4A77C;
+    color: #17251F;
     font-weight: 700;
     font-size: 15px;
     padding: 15px 38px;
@@ -767,7 +723,7 @@
     text-decoration: none;
     transition: background 0.25s ease;
   }
-  .mcr-contact-header .mcr-cta-btn:hover { background: #384D48; }
+  .mcr-contact-header .mcr-cta-btn:hover { background: #d8bd91; }
 
   @media (max-width: 560px) {
     .mcr-contact-header { padding: 60px 6%; }
@@ -775,10 +731,10 @@
 </style>
 
 <section class="mcr-contact-header" id="contact">
-  <div class="mcr-eyebrow">SERVING SUFFOLK WITH SKILLED CARPENTRY</div>
-  <h2>Upgrade your home.<br>Book today.</h2>
-  <p>Tell us about your project and we'll get back to you within 2 working days with honest advice and a clear next step.</p>
-  <a class="mcr-cta-btn" href="get-in-touch.html#contact-form">Get a free quote</a>
+  <div class="mcr-eyebrow mcr-reveal">SERVING SUFFOLK WITH SKILLED CARPENTRY</div>
+  <h2 class="mcr-reveal">Upgrade your home.<br>Book today.</h2>
+  <p class="mcr-reveal">Tell us about your project and we'll get back to you within 2 working days with honest advice and a clear next step.</p>
+  <a class="mcr-cta-btn mcr-reveal" href="get-in-touch.html#contact-form">Get a free quote</a>
 </section>
 
 
@@ -881,14 +837,15 @@
 </style>
 
 <section class="mcr-gallery-slideshow" id="gallery">
-  <h2>Craftsmanship in every detail</h2>
-    <p>Follow along on Instagram for our latest projects.</p>
+  <h2 class="mcr-reveal">Recent Projects</h2>
+    <p class="mcr-reveal">Follow along on Instagram for our latest projects.</p>
 
-    <div class="mcr-instagram-wrap">
-      <iframe src="https://widgets.sociablekit.com/instagram-feed/iframe/25708851" frameborder="0" scrolling="no"></iframe>
+    <div class="mcr-instagram-wrap mcr-reveal">
+      <div class="sk-instagram-feed" data-embed-id="25708851"></div>
+      <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
     </div>
 
-    <div class="mcr-gallery-btn-row">
+    <div class="mcr-gallery-btn-row mcr-reveal">
       <a class="mcr-instagram-follow-link" href="https://www.instagram.com/maltingscarpentry/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         Follow us on Instagram
@@ -943,6 +900,115 @@
   </div>
 </footer>
 
+<style>
+  .mcr-progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #384D48, #C4A77C);
+    z-index: 200;
+    transition: width 0.1s ease-out;
+  }
+  .mcr-back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #17251F;
+    border: 1px solid #C4A77C;
+    color: #EDE4D3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease, visibility 0.25s;
+    z-index: 90;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  }
+  .mcr-back-to-top.mcr-visible-btn { opacity: 1; visibility: visible; transform: translateY(0); }
+  .mcr-back-to-top:hover { background: #384D48; }
+  .mcr-back-to-top svg { width: 20px; height: 20px; }
+  @media (max-width: 560px) {
+    .mcr-back-to-top { bottom: 16px; right: 16px; width: 42px; height: 42px; }
+  }
+</style>
+
+<div class="mcr-progress-bar" id="mcrProgressBar"></div>
+
+<button class="mcr-back-to-top" id="mcrBackToTop" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+</button>
+
+<script>
+  (function() {
+    /* Scroll-triggered fade/slide-in reveal, runs after full DOM is parsed */
+    var revealEls = document.querySelectorAll('.mcr-reveal');
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('mcr-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el) { revealObserver.observe(el); });
+
+    /* Count-up animation for the About section stats */
+    var counters = document.querySelectorAll('[data-count-to]');
+    var countObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-count-to'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1200;
+        var startTime = null;
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function(el) { countObserver.observe(el); });
+
+    /* Sticky header solid background after scrolling, scroll progress bar, back-to-top button */
+    var header = document.querySelector('.mcr-header');
+    var progressBar = document.getElementById('mcrProgressBar');
+    var backToTop = document.getElementById('mcrBackToTop');
+
+    function onScroll() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = pct + '%';
+
+      if (header) {
+        if (scrollTop > 40) header.classList.add('mcr-scrolled');
+        else header.classList.remove('mcr-scrolled');
+      }
+
+      if (scrollTop > 500) backToTop.classList.add('mcr-visible-btn');
+      else backToTop.classList.remove('mcr-visible-btn');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+</script>
 
 </body>
 </html>
