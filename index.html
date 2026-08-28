@@ -497,20 +497,23 @@
     line-height: 1.6;
   }
   .mcr-instagram-wrap {
-    max-width: 460px;
+    width: 420px;
+    max-width: 100%;
+    height: 348px;
     margin: 0 auto 24px;
-    max-height: 150px;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
-    border-radius: 8px;
   }
-  .mcr-instagram-wrap::after {
-    content: '';
+  .mcr-instagram-wrap iframe {
+    width: 1050px;
+    height: 869px;
+    border: 0;
     position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: 46px;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #FFFFFF 100%);
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    transform: scale(0.4);
+    transform-origin: 0 0;
   }
 
   .mcr-recent-projects-link {
@@ -558,7 +561,8 @@
     .mcr-gallery-slideshow { padding: 44px 6%; }
     .mcr-gallery-card { padding: 28px 20px 32px; }
     .mcr-gallery-slideshow h2 { white-space: normal; }
-    .mcr-instagram-wrap { max-height: 130px; }
+    .mcr-instagram-wrap { width: 100%; height: 300px; }
+    .mcr-instagram-wrap iframe { width: 900px; height: 869px; transform: scale(0.345); }
   }
 </style>
 
@@ -894,8 +898,7 @@
     <p>Follow along on Instagram for our latest projects.</p>
 
     <div class="mcr-instagram-wrap">
-      <div class="sk-instagram-feed" data-embed-id="25708851"></div>
-      <script src="https://widgets.sociablekit.com/instagram-feed/widget.js" defer></script>
+      <iframe src="https://widgets.sociablekit.com/instagram-feed/iframe/25708851" frameborder="0" scrolling="no"></iframe>
     </div>
 
     <div class="mcr-gallery-btn-row">
