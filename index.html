@@ -60,6 +60,11 @@
     text-decoration: none; white-space: nowrap; transition: all 0.25s ease;
   }
   .mcr-header .mcr-nav-cta:hover { background: #EDE4D3; color: #17251F !important; border-color: #EDE4D3; }
+  .mcr-header-socials { display: flex; align-items: center; gap: 14px; }
+  .mcr-header-socials a { display: flex; color: #EDE4D3; transition: color 0.25s ease; }
+  .mcr-header-socials a:hover { color: #C4A77C; }
+  .mcr-header-socials svg { width: 17px; height: 17px; }
+  .mcr-header-socials-mobile { display: none; }
 
   .mcr-nav-links { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
   .mcr-nav-link-cta { display: none; }
@@ -121,20 +126,11 @@
     text-transform: uppercase;
     margin: 0 0 26px;
   }
-  .mcr-hero-chips { display: flex; gap: 10px; flex-wrap: wrap; }
-  .mcr-hero-chip {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 12px; font-weight: 600; letter-spacing: 0.3px;
-    color: #EDE4D3; background: rgba(237,228,211,0.12);
-    border: 1px solid rgba(237,228,211,0.28);
-    padding: 8px 14px; border-radius: 999px;
-  }
-  .mcr-hero-chip svg { width: 13px; height: 13px; flex-shrink: 0; }
-
   @media (max-width: 780px) {
     .mcr-header .mcr-nav-links { display: none; }
     .mcr-header .mcr-burger { display: flex; }
     .mcr-header { padding: 14px 5%; }
+    .mcr-header-socials-desktop { display: none; }
     .mcr-nav-links.mcr-nav-open {
       display: flex; position: fixed; inset: 0; background: #17251F;
       flex-direction: column; align-items: center; justify-content: center;
@@ -145,6 +141,8 @@
       display: inline-flex; margin-top: 6px; padding: 13px 34px;
       border: 1px solid #C4A77C; border-radius: 4px; color: #C4A77C !important; font-size: 16px;
     }
+    .mcr-nav-links.mcr-nav-open .mcr-header-socials-mobile { display: flex; margin-top: 10px; gap: 22px; }
+    .mcr-nav-links.mcr-nav-open .mcr-header-socials-mobile svg { width: 22px; height: 22px; }
   }
   @media (max-width: 900px) {
     .mcr-hero-wrap { min-height: 80vh; display: flex; flex-direction: column; }
@@ -169,6 +167,34 @@
     .mcr-header .mcr-logo-wrap img { height: 28px; }
     .mcr-hero-inner h1 { font-size: 26px; }
   }
+
+  .mcr-trust-strip {
+    background: #F7F6F3;
+    border-bottom: 1px solid #E4E1DA;
+    padding: 16px 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    font-family: 'Inter', Arial, sans-serif;
+  }
+  .mcr-trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 22px;
+    border-right: 1px solid #E4E1DA;
+    color: #17251F;
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+  .mcr-trust-item:last-child { border-right: none; }
+  .mcr-trust-item svg { width: 15px; height: 15px; color: #8a6f45; flex-shrink: 0; }
+  @media (max-width: 640px) {
+    .mcr-trust-strip { padding: 14px 6%; }
+    .mcr-trust-item { border-right: none; width: 50%; justify-content: center; padding: 8px 8px; font-size: 11.5px; }
+  }
 </style>
 
 <div class="mcr-hero-wrap">
@@ -184,6 +210,14 @@
         <a class="mcr-nav-link" href="about.html">About</a>
         <a class="mcr-nav-link" href="gallery.html">Recent Projects</a>
         <a class="mcr-nav-link mcr-nav-link-cta" href="get-in-touch.html#contact-form">Get in touch</a>
+        <div class="mcr-header-socials mcr-header-socials-mobile">
+          <a href="https://www.instagram.com/maltingscarpentry/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.google.com/maps/search/Maltings+Carpentry+%26+Renovations+Suffolk" target="_blank" rel="noopener" aria-label="Find us on Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></a>
+        </div>
+      </div>
+      <div class="mcr-header-socials mcr-header-socials-desktop">
+        <a href="https://www.instagram.com/maltingscarpentry/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://www.google.com/maps/search/Maltings+Carpentry+%26+Renovations+Suffolk" target="_blank" rel="noopener" aria-label="Find us on Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></a>
       </div>
       <a class="mcr-nav-cta" href="get-in-touch.html#contact-form">Get in touch</a>
       <button class="mcr-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mcrNavLinks">
@@ -223,11 +257,14 @@
       <a class="mcr-pill-btn mcr-pill-solid" href="get-in-touch.html#contact-form">Get a free quote</a>
       <a class="mcr-pill-btn mcr-pill-outline" href="#gallery">View our work</a>
     </div>
-    <div class="mcr-hero-chips">
-      <span class="mcr-hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 10l-5 4.5 1.5 7L12 18l-5.5 3.5 1.5-7L3 10l6.5-1.5z"/></svg>15+ years' experience</span>
-      <span class="mcr-hero-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fully insured</span>
-    </div>
   </div>
+</div>
+
+<div class="mcr-trust-strip">
+  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 10l-5 4.5 1.5 7L12 18l-5.5 3.5 1.5-7L3 10l6.5-1.5z"/></svg>15+ years' experience</span>
+  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>100% independent and local</span>
+  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fully insured</span>
+  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3.83A2 2 0 0 0 9.59 3.17L3 3l-.17 6.59a2 2 0 0 0 .58 1.42l9.58 9.58a2 2 0 0 0 2.83 0l4.77-4.77a2 2 0 0 0 0-2.83z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Free quotes</span>
 </div>
 
 
@@ -443,6 +480,14 @@
     overflow-x: hidden;
     box-sizing: border-box;
   }
+  .mcr-gallery-slideshow .mcr-eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #8a6f45;
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-align: center;
+  }
   .mcr-gallery-slideshow h2 {
     font-family: 'Poppins', Arial, sans-serif;
     font-size: clamp(20px, 2.8vw, 28px);
@@ -578,26 +623,6 @@
     font-size: 15.5px;
     max-width: 640px;
   }
-  .mcr-about-stats {
-    display: flex;
-    gap: 12px;
-    margin-top: 28px;
-    flex-wrap: wrap;
-    max-width: 640px;
-  }
-  .mcr-stat {
-    flex: 1 1 150px;
-    background: rgba(237,228,211,0.06);
-    border: 1px solid rgba(237,228,211,0.15);
-    border-radius: 8px;
-    padding: 16px;
-  }
-  .mcr-stat .mcr-num { font-size: 26px; font-weight: 700; color: #C4A77C; }
-  .mcr-stat .mcr-num svg { width: 26px; height: 26px; display: block; }
-  .mcr-stat .mcr-label {
-    font-size: 11.5px; letter-spacing: 0.6px; text-transform: uppercase; color: #a9b3ac; margin-top: 6px;
-  }
-
   @media (min-width: 900px) {
     .mcr-about { display: flex; min-height: 480px; }
     .mcr-about-photo { flex: 0 0 42%; height: auto; }
@@ -605,8 +630,6 @@
   }
   @media (max-width: 560px) {
     .mcr-about-body { padding: 40px 6% 50px; }
-    .mcr-about-stats { gap: 10px; }
-    .mcr-stat .mcr-num { font-size: 22px; }
   }
 </style>
 
@@ -618,7 +641,7 @@
   </div>
   <div class="mcr-about-body">
     <div class="mcr-eyebrow mcr-reveal">OUR STORY</div>
-    <h2 class="mcr-reveal">An independent carpenter, trusted across Suffolk</h2>
+    <h2 class="mcr-reveal">A local carpenter you can rely on</h2>
     <div class="mcr-about-signature mcr-reveal">
       <img src="data:image/jpeg;base64,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" alt="Will, founder of Maltings Carpentry &amp; Renovations">
       <div>
@@ -626,14 +649,9 @@
         <div class="mcr-signature-role">Founder, Maltings Carpentry &amp; Renovations</div>
       </div>
     </div>
-    <p class="mcr-reveal">Maltings Carpentry &amp; Renovations is an independent carpentry business based locally in Suffolk. With 15+ years' experience in the building industry, we bring precision, care and honest craftsmanship to every job.</p>
-    <p class="mcr-reveal">As a local, independent business, we bring the same attention to detail to every job, big or small, whether that's a fitted wardrobe or a full renovation. We cover Suffolk including Ipswich, Saxmundham, Woodbridge, Aldeburgh and Framlingham, and surrounding areas.</p>
-    <div class="mcr-about-stats mcr-reveal">
-      <div class="mcr-stat"><div class="mcr-num" data-count-to="15" data-suffix="+">0</div><div class="mcr-label">Years' Experience</div></div>
-      <div class="mcr-stat"><div class="mcr-num" data-count-to="100" data-suffix="%">0</div><div class="mcr-label">Independent &amp; Local</div></div>
-      <div class="mcr-stat"><div class="mcr-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg></div><div class="mcr-label">Fully Insured</div></div>
-      <div class="mcr-stat"><div class="mcr-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3.83A2 2 0 0 0 9.59 3.17L3 3l-.17 6.59a2 2 0 0 0 .58 1.42l9.58 9.58a2 2 0 0 0 2.83 0l4.77-4.77a2 2 0 0 0 0-2.83z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg></div><div class="mcr-label">Free Quotes</div></div>
-    </div>
+    <p class="mcr-reveal">I'm Will, and I run Maltings Carpentry &amp; Renovations, based in Snape, Suffolk. With over 15 years' experience in the building industry, I work on everything from fitted wardrobes, bespoke cabinetry and kitchens through to house builds, extensions and renovations.</p>
+    <p class="mcr-reveal">As an independent carpenter, I deal with every project personally, from the initial conversation to the layout and proportions to materials, finishes and the finer details, I can offer advice and ideas throughout the project to help bring the right solution together.</p>
+    <p class="mcr-reveal">I work across Suffolk, including Aldeburgh, Saxmundham, Woodbridge, Framlingham, Ipswich and Bury St Edmunds. If you're further afield, get in touch anyway - I may still be able to help.</p>
   </div>
 </section>
 
@@ -689,6 +707,16 @@
     line-height: 1.65;
     margin: 0;
   }
+  .mcr-review-author {
+    margin-top: 12px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #384D48;
+  }
+  .mcr-review-author span {
+    font-weight: 400;
+    color: #8a978f;
+  }
 
   @media (max-width: 560px) {
     .mcr-reviews { padding: 34px 0 40px; }
@@ -703,35 +731,43 @@
       <div class="mcr-review-card">
         <div class="mcr-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>He made us a fantastic media wall and fitted our wardrobes. Would use him again and happily recommend him.</p>
+        <div class="mcr-review-author">Simon G. <span>&middot; Aldeburgh</span></div>
       </div>
       <div class="mcr-review-card">
         <div class="mcr-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>Will from Maltings did a superb job start to finish. He has a very keen eye and suggested great alteration ideas towards the mock design my partner and I had drawn up for a bedroom cabinetry and under stairs storage.</p>
+        <div class="mcr-review-author">Joe P. <span>&middot; Bury St Edmunds</span></div>
       </div>
       <div class="mcr-review-card">
         <div class="mcr-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>The standard was excellent, he was really tidy and the pricing I found to be very competitive for the work.</p>
+        <div class="mcr-review-author">Sharon W. <span>&middot; Bungay</span></div>
       </div>
       <div class="mcr-review-card">
         <div class="mcr-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>I will not hesitate to use Maltings for all future works and would definitely recommend if you're looking for a fantastic carpenter!</p>
+        <div class="mcr-review-author">Karen L. <span>&middot; Woodbridge</span></div>
       </div>
       <!-- duplicate set for seamless loop -->
       <div class="mcr-review-card">
         <div class="mcr-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>He made us a fantastic media wall and fitted our wardrobes. Would use him again and happily recommend him.</p>
+        <div class="mcr-review-author">Simon G. <span>&middot; Aldeburgh</span></div>
       </div>
       <div class="mcr-review-card">
         <div class="mcr-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>Will from Maltings did a superb job start to finish. He has a very keen eye and suggested great alteration ideas towards the mock design my partner and I had drawn up for a bedroom cabinetry and under stairs storage.</p>
+        <div class="mcr-review-author">Joe P. <span>&middot; Bury St Edmunds</span></div>
       </div>
       <div class="mcr-review-card">
         <div class="mcr-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>The standard was excellent, he was really tidy and the pricing I found to be very competitive for the work.</p>
+        <div class="mcr-review-author">Sharon W. <span>&middot; Bungay</span></div>
       </div>
       <div class="mcr-review-card">
         <div class="mcr-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p>I will not hesitate to use Maltings for all future works and would definitely recommend if you're looking for a fantastic carpenter!</p>
+        <div class="mcr-review-author">Karen L. <span>&middot; Woodbridge</span></div>
       </div>
     </div>
   </div>
@@ -862,6 +898,20 @@
   }
   .mcr-footer .mcr-footer-social a svg { width: 16px; height: 16px; }
 
+  .mcr-footer-google-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    text-decoration: none;
+  }
+  .mcr-footer-google-rating svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .mcr-footer-google-rating-text { display: flex; flex-direction: column; gap: 2px; }
+  .mcr-footer-google-rating-text span:first-child {
+    font-size: 12.5px; font-weight: 600; color: #EDE4D3;
+  }
+  .mcr-footer-google-rating-stars { color: #C4A77C; font-size: 13px; letter-spacing: 1px; }
+
   .mcr-footer-bottom {
     max-width: 1180px;
     margin: 50px auto 0;
@@ -884,6 +934,7 @@
 </style>
 
 <section class="mcr-gallery-slideshow" id="gallery">
+  <div class="mcr-eyebrow mcr-reveal">SEE OUR WORK</div>
   <h2 class="mcr-reveal">Recent Projects</h2>
     <p class="mcr-reveal">Follow along on Instagram for our latest projects.</p>
 
@@ -938,6 +989,13 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="#EDE4D3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
         </a>
       </div>
+      <a class="mcr-footer-google-rating" href="https://share.google/WiJmPhkmPlzNxwRNH" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.85A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.09A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.44.34-2.09V7.06H2.18A11 11 0 0 0 1 12c0 1.78.43 3.46 1.18 4.94l3.66-2.85z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1a11 11 0 0 0-9.82 6.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        <span class="mcr-footer-google-rating-text">
+          <span>Google Rating</span>
+          <span class="mcr-footer-google-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </span>
+      </a>
     </div>
   </div>
 
