@@ -66,6 +66,26 @@
   .mcr-header .mcr-nav-cta:hover { background: #D4BC96; }
 
   .mcr-nav-links { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+  .mcr-dropdown { position: relative; display:flex; flex-direction:column; align-items:center; }
+  .mcr-dropdown-menu { display:flex; flex-direction:column; align-items:center; gap:14px; margin-top:10px; }
+  .mcr-dropdown-menu a { font-size:15px; }
+  @media (min-width: 781px) {
+    .mcr-dropdown { display:inline-block; }
+    .mcr-dropdown > a.mcr-nav-link::after {
+      content:''; display:inline-block; margin-left:5px; border:4px solid transparent;
+      border-top-color:currentColor; vertical-align:middle; opacity:.8;
+    }
+    .mcr-dropdown-menu {
+      position:absolute; top:100%; left:50%; transform:translateX(-50%);
+      background:#17251F; border:1px solid rgba(237,228,211,.15); border-radius:6px;
+      padding:8px 0; margin-top:14px; min-width:150px; flex-direction:column; gap:0;
+      opacity:0; visibility:hidden; transition:opacity .2s ease;
+      box-shadow:0 12px 24px rgba(15,33,28,.35); z-index: 60;
+    }
+    .mcr-dropdown-menu a { padding:9px 20px; font-size:13px; color:#EDE4D3; white-space:nowrap; }
+    .mcr-dropdown-menu a:hover { color:#C4A77C; background:rgba(237,228,211,.06); }
+    .mcr-dropdown:hover .mcr-dropdown-menu, .mcr-dropdown:focus-within .mcr-dropdown-menu { opacity:1; visibility:visible; }
+  }
   .mcr-nav-link-cta { display: none; }
   .mcr-burger {
     display: none; flex-direction: column; justify-content: center; gap: 5px;
@@ -138,6 +158,7 @@
       gap: 30px; z-index: 200;
     }
     .mcr-nav-links.mcr-nav-open a.mcr-nav-link { font-size: 20px; }
+    .mcr-nav-links.mcr-nav-open .mcr-dropdown-menu a.mcr-nav-link { font-size: 16px; color:#C4A77C; }
     .mcr-nav-links.mcr-nav-open a.mcr-nav-link-cta {
       display: inline-flex; margin-top: 6px; padding: 13px 34px;
       border: 1px solid #C4A77C; border-radius: 4px; color: #C4A77C !important; font-size: 16px;
@@ -172,7 +193,13 @@
       <div class="mcr-nav-links" id="mcrNavLinks">
         <a class="mcr-nav-link" href="index.html">Home</a>
         <a class="mcr-nav-link" href="services.html">Services</a>
-        <a class="mcr-nav-link mcr-active" href="about.html">About</a>
+        <div class="mcr-dropdown">
+          <a class="mcr-nav-link mcr-active" href="about.html">About</a>
+          <div class="mcr-dropdown-menu">
+            <a class="mcr-nav-link" href="blog.html">Blog</a>
+            <a class="mcr-nav-link" href="faq.html">FAQ</a>
+          </div>
+        </div>
         <a class="mcr-nav-link" href="gallery.html">Recent Projects</a>
         <a class="mcr-nav-link mcr-nav-link-cta" href="https://maltings-carpentry-renovations.co.uk/get-in-touch">Get in touch</a>
       </div>
@@ -662,6 +689,8 @@
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="faq.html">FAQ</a>
       <a href="gallery.html">Recent Projects</a>
       <a href="https://maltings-carpentry-renovations.co.uk/get-in-touch">Get in touch</a>
     </div>
