@@ -160,33 +160,64 @@
   }
 
   .mcr-trust-strip {
-    background: #F7F6F3;
-    border-bottom: 1px solid #E4E1DA;
-    padding: 16px 6%;
+    background: #0F211C;
+    border-top: 1px solid rgba(138,111,69,0.35);
+    padding: 22px 6%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    row-gap: 8px;
+    gap: 0;
     font-family: 'Inter', Arial, sans-serif;
+    position: relative;
+  }
+  .mcr-trust-strip::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8a6f45 50%, transparent);
   }
   .mcr-trust-item {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 9px;
-    padding: 0 24px;
-    border-right: 1px solid #E4E1DA;
-    color: #17251F;
+    gap: 12px;
+    padding: 6px 28px;
+    position: relative;
+    color: #EDE4D3;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-  .mcr-trust-item:last-child { border-right: none; }
-  .mcr-trust-item svg { width: 14px; height: 14px; color: #8a6f45; flex-shrink: 0; }
+  .mcr-trust-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 22px;
+    width: 1px;
+    background: rgba(237,228,211,0.15);
+  }
+  .mcr-trust-icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(138,111,69,0.16);
+    border: 1px solid rgba(138,111,69,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mcr-trust-item svg { width: 14px; height: 14px; color: #C9A96A; flex-shrink: 0; }
   @media (max-width: 640px) {
-    .mcr-trust-strip { padding: 14px 6%; }
-    .mcr-trust-item { border-right: none; width: 50%; justify-content: center; padding: 8px 8px; font-size: 10px; letter-spacing: 0.08em; }
+    .mcr-trust-strip { padding: 18px 5%; row-gap: 16px; }
+    .mcr-trust-item { width: 50%; padding: 4px 10px; font-size: 9.5px; letter-spacing: 0.09em; gap: 9px; }
+    .mcr-trust-item:not(:last-child)::after { display: none; }
+    .mcr-trust-icon { width: 26px; height: 26px; }
+    .mcr-trust-item svg { width: 12px; height: 12px; }
   }
 </style>
 
@@ -246,10 +277,10 @@
 </div>
 
 <div class="mcr-trust-strip">
-  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 10l-5 4.5 1.5 7L12 18l-5.5 3.5 1.5-7L3 10l6.5-1.5z"/></svg>15+ years' experience</span>
-  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>100% independent and local</span>
-  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fully insured</span>
-  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3.83A2 2 0 0 0 9.59 3.17L3 3l-.17 6.59a2 2 0 0 0 .58 1.42l9.58 9.58a2 2 0 0 0 2.83 0l4.77-4.77a2 2 0 0 0 0-2.83z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Free quotes</span>
+  <span class="mcr-trust-item"><span class="mcr-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 10l-5 4.5 1.5 7L12 18l-5.5 3.5 1.5-7L3 10l6.5-1.5z"/></svg></span>15+ years' experience</span>
+  <span class="mcr-trust-item"><span class="mcr-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>100% independent and local</span>
+  <span class="mcr-trust-item"><span class="mcr-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Fully insured</span>
+  <span class="mcr-trust-item"><span class="mcr-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3.83A2 2 0 0 0 9.59 3.17L3 3l-.17 6.59a2 2 0 0 0 .58 1.42l9.58 9.58a2 2 0 0 0 2.83 0l4.77-4.77a2 2 0 0 0 0-2.83z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>Free quotes</span>
 </div>
 
 
