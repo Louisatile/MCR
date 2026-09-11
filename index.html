@@ -74,14 +74,20 @@
     }
     .mcr-dropdown-menu {
       position:absolute; top:100%; left:50%; transform:translateX(-50%);
-      background:#17251F; border:1px solid rgba(237,228,211,.15); border-radius:6px;
-      padding:8px 0; margin-top:14px; min-width:150px; flex-direction:column; gap:0;
-      opacity:0; visibility:hidden; transition:opacity .2s ease;
-      box-shadow:0 12px 24px rgba(15,33,28,.35); z-index: 60;
+      padding-top:14px; margin-top:0; min-width:150px;
+      flex-direction:column; gap:0;
+      opacity:0; visibility:hidden; transition:opacity .2s ease, visibility .2s ease;
+      z-index: 60; pointer-events:none;
     }
-    .mcr-dropdown-menu a { padding:9px 20px; font-size:13px; color:#EDE4D3; white-space:nowrap; }
+    .mcr-dropdown-menu-inner {
+      background:#17251F; border:1px solid rgba(237,228,211,.15); border-radius:6px;
+      padding:8px 0; box-shadow:0 12px 24px rgba(15,33,28,.35);
+    }
+    .mcr-dropdown-menu a { display:block; padding:9px 20px; font-size:13px; color:#EDE4D3; white-space:nowrap; }
     .mcr-dropdown-menu a:hover { color:#C4A77C; background:rgba(237,228,211,.06); }
-    .mcr-dropdown:hover .mcr-dropdown-menu, .mcr-dropdown:focus-within .mcr-dropdown-menu { opacity:1; visibility:visible; }
+    .mcr-dropdown:hover .mcr-dropdown-menu,
+    .mcr-dropdown:focus-within .mcr-dropdown-menu,
+    .mcr-dropdown.mcr-dropdown-open .mcr-dropdown-menu { opacity:1; visibility:visible; pointer-events:auto; }
   }
   .mcr-nav-link-cta { display: none; }
   .mcr-burger {
@@ -250,13 +256,15 @@
     </div>
     <nav>
       <div class="mcr-nav-links" id="mcrNavLinks">
-        <a class="mcr-nav-link" href="./">Home</a>
+        <a class="mcr-nav-link mcr-active" href="index.html">Home</a>
         <a class="mcr-nav-link" href="services.html">Services</a>
         <div class="mcr-dropdown">
-          <a class="mcr-nav-link" href="about.html">About</a>
+          <a class="mcr-nav-link" href="about.html" aria-haspopup="true" aria-expanded="false">About</a>
           <div class="mcr-dropdown-menu">
-            <a class="mcr-nav-link" href="blog.html">Blog</a>
-            <a class="mcr-nav-link" href="faq.html">FAQ</a>
+            <div class="mcr-dropdown-menu-inner">
+              <a class="mcr-nav-link" href="blog.html">Blog</a>
+              <a class="mcr-nav-link" href="faq.html">FAQ</a>
+            </div>
           </div>
         </div>
         <a class="mcr-nav-link" href="gallery.html">Recent Projects</a>
@@ -290,6 +298,32 @@
     });
     navLinks.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
     document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+
+    document.querySelectorAll('.mcr-dropdown > a.mcr-nav-link').forEach(function(trigger){
+      trigger.addEventListener('click', function(e){
+        var isTouch = window.matchMedia('(hover: none)').matches;
+        var isMobileWidth = window.innerWidth <= 780;
+        if (!isTouch || isMobileWidth) return;
+        var dropdown = trigger.parentElement;
+        if (!dropdown.classList.contains('mcr-dropdown-open')) {
+          e.preventDefault();
+          document.querySelectorAll('.mcr-dropdown.mcr-dropdown-open').forEach(function(d){
+            d.classList.remove('mcr-dropdown-open');
+            d.querySelector('a.mcr-nav-link').setAttribute('aria-expanded', 'false');
+          });
+          dropdown.classList.add('mcr-dropdown-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+    document.addEventListener('click', function(e){
+      if (!e.target.closest('.mcr-dropdown')) {
+        document.querySelectorAll('.mcr-dropdown.mcr-dropdown-open').forEach(function(d){
+          d.classList.remove('mcr-dropdown-open');
+          d.querySelector('a.mcr-nav-link').setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
   })();
   </script>
 
