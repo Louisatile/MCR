@@ -102,8 +102,7 @@ section[id] { scroll-margin-top: 90px; }
 }
 .mcr-page-hero {
   position: relative; z-index: 2;
-  padding: 60px 6% 90px;
-  text-align: center;
+  padding: 90px 6% 100px;
 }
 .mcr-page-hero-inner { position: relative; z-index: 2; }
 .mcr-page-hero .mcr-eyebrow {
@@ -112,9 +111,9 @@ section[id] { scroll-margin-top: 90px; }
 }
 .mcr-page-hero h1 {
   font-family:'Poppins', Arial, sans-serif; font-weight:300; letter-spacing:.03em;
-  font-size: clamp(28px, 5vw, 46px); margin-bottom: 16px;
+  font-size: clamp(30px, 6.5vw, 64px); margin-bottom: 16px;
 }
-.mcr-page-hero p { max-width: 640px; margin: 0 auto; color:#e3ddcd; font-size:16px; line-height:1.7; }
+.mcr-page-hero p { max-width: 640px; margin: 0; color:#e3ddcd; font-size:16px; line-height:1.7; }
 
 @media (max-width: 480px) {
   .mcr-page-hero { padding: 40px 6% 60px; }
@@ -179,12 +178,20 @@ section[id] { scroll-margin-top: 90px; }
 .mcr-back-link:hover { color:#17251F; }
 
 /* ---- FAQ accordion ---- */
+.mcr-faq-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 8px 30px;
+  box-shadow: 0 4px 20px rgba(23,37,31,0.07);
+  margin-bottom: 12px;
+}
 .mcr-faq { margin-top: 6px; }
 .mcr-faq details {
-  border-bottom: 1px solid #d9cfba;
+  border-bottom: 1px solid #ece6d8;
   padding: 16px 0;
 }
-.mcr-faq details:first-child { border-top: 1px solid #d9cfba; }
+.mcr-faq details:first-child { border-top: none; }
+.mcr-faq details:last-child { border-bottom: none; }
 .mcr-faq summary {
   list-style: none; cursor: pointer; font-weight: 600; color:#17251F; font-size:16px;
   display: flex; justify-content: space-between; align-items: center; gap: 16px;
@@ -197,7 +204,8 @@ section[id] { scroll-margin-top: 90px; }
 .mcr-faq details[open] summary::after { transform: rotate(45deg); }
 .mcr-faq details p { margin: 14px 0 0; font-size: 15.5px; line-height: 1.8; color:#3c4a43; }
 
-/* ---- CTA (matches other pages) ---- .mcr-contact-header {
+/* ---- CTA (matches other pages) ---- */
+  .mcr-contact-header {
     font-family: 'Inter', Arial, sans-serif;
     background: #384D48;
     color: #FFFFFF;
@@ -234,7 +242,8 @@ section[id] { scroll-margin-top: 90px; }
     .mcr-contact-header { padding: 60px 6%; }
   }
 
-/* ---- Footer (matches other pages, teal) ---- .mcr-footer {
+/* ---- Footer (matches other pages, teal) ---- */
+  .mcr-footer {
     font-family: 'Inter', Arial, sans-serif;
     background: #384D48;
     color: #EDE4D3;
@@ -384,10 +393,10 @@ section[id] { scroll-margin-top: 90px; }
 
 <div class="mcr-article">
   <h2>Fitted Wardrobes &amp; Bespoke Carpentry</h2>
-  <div class="mcr-faq"><details><summary>Can a carpenter make IKEA PAX wardrobes look built in?</summary><p>Yes. Additional carpentry can be used to fill gaps, create surrounds and add finishing details around IKEA units, helping them achieve a much more built-in appearance.</p></details><details><summary>Can you install IKEA PAX wardrobes?</summary><p>Yes. For suitable projects, we can install IKEA wardrobe systems and carry out additional carpentry to create a more bespoke finished result.</p></details><details><summary>Is IKEA cheaper than bespoke fitted wardrobes?</summary><p>The furniture itself is generally less expensive than fully bespoke furniture. However, the final cost of an IKEA-based installation will depend on assembly, installation and any additional carpentry required.</p></details><details><summary>Can IKEA wardrobes look expensive?</summary><p>Yes. Careful installation and bespoke finishing details such as panels, mouldings, plinths and cornices can make a significant difference to the final appearance.</p></details><details><summary>Are bespoke fitted wardrobes worth it?</summary><p>For many homeowners, bespoke wardrobes are worthwhile because they can make better use of the available space and give you much greater control over the design and finish.</p></details><details><summary>Can you build wardrobes around sloping ceilings and alcoves?</summary><p>Yes. Bespoke carpentry is particularly useful for awkward spaces such as alcoves, sloping ceilings, chimney breasts and uneven walls.</p></details><details><summary>How much do fitted wardrobes cost?</summary><p>There isn't a standard price because costs vary depending on the size, materials, design, doors, internal storage and installation requirements. An IKEA-based hybrid installation can sometimes provide a middle ground between a standard wardrobe and fully bespoke furniture.</p></details><details><summary>Do you cover my area?</summary><p>We're based in Snape and cover much of Suffolk, including Aldeburgh, Saxmundham, Woodbridge, Framlingham, Ipswich and surrounding areas. If you're unsure, get in touch with your postcode and project details.</p></details></div>
+  <div class="mcr-faq-card"><div class="mcr-faq"><details><summary>Can a carpenter make IKEA PAX wardrobes look built in?</summary><p>Yes. Additional carpentry can be used to fill gaps, create surrounds and add finishing details around IKEA units, helping them achieve a much more built-in appearance.</p></details><details><summary>Can you install IKEA PAX wardrobes?</summary><p>Yes. For suitable projects, we can install IKEA wardrobe systems and carry out additional carpentry to create a more bespoke finished result.</p></details><details><summary>Is IKEA cheaper than bespoke fitted wardrobes?</summary><p>The furniture itself is generally less expensive than fully bespoke furniture. However, the final cost of an IKEA-based installation will depend on assembly, installation and any additional carpentry required.</p></details><details><summary>Can IKEA wardrobes look expensive?</summary><p>Yes. Careful installation and bespoke finishing details such as panels, mouldings, plinths and cornices can make a significant difference to the final appearance.</p></details><details><summary>Are bespoke fitted wardrobes worth it?</summary><p>For many homeowners, bespoke wardrobes are worthwhile because they can make better use of the available space and give you much greater control over the design and finish.</p></details><details><summary>Can you build wardrobes around sloping ceilings and alcoves?</summary><p>Yes. Bespoke carpentry is particularly useful for awkward spaces such as alcoves, sloping ceilings, chimney breasts and uneven walls.</p></details><details><summary>How much do fitted wardrobes cost?</summary><p>There isn't a standard price because costs vary depending on the size, materials, design, doors, internal storage and installation requirements. An IKEA-based hybrid installation can sometimes provide a middle ground between a standard wardrobe and fully bespoke furniture.</p></details><details><summary>Do you cover my area?</summary><p>We're based in Snape and cover much of Suffolk, including Aldeburgh, Saxmundham, Woodbridge, Framlingham, Ipswich and surrounding areas. If you're unsure, get in touch with your postcode and project details.</p></details></div></div>
 
   <h2>Costs &amp; Pricing</h2>
-  <div class="mcr-faq"><details><summary>What is the average carpenter's day rate in the UK?</summary><p>Typically &pound;200&ndash;&pound;300 a day, depending on experience, location and the complexity of the work. Specialist or bespoke joinery can go higher.</p></details><details><summary>Do carpenters charge VAT?</summary><p>Some do, some don't. Registration is required once turnover passes &pound;90,000 a year, though smaller businesses can register voluntarily below that.</p></details><details><summary>Why has carpentry got more expensive?</summary><p>Mainly the 2021&ndash;22 spike in timber prices, alongside rising fuel, tool, insurance and van costs since then. Prices haven't kept climbing every year, but they haven't come back to pre-2020 levels either.</p></details><details><summary>How much does timber cost?</summary><p>It depends on the type. Basic pine can be a few pounds a length; oak and specialist timbers can run to tens of pounds per board, and full sheets of MDF typically sit between &pound;25 and &pound;65 depending on grade and finish.</p></details><details><summary>How much do a carpenter's tools cost?</summary><p>A working professional can easily have several thousand pounds invested in power tools alone, before hand tools, storage and a van.</p></details><details><summary>Can carpentry add value to a house?</summary><p>Well-designed fitted storage and joinery can make awkward spaces usable and give a home a more finished feel, particularly in alcoves, sloped ceilings, and underused corners.</p></details><details><summary>How do I get a quote?</summary><p>Send over what you'd like doing, your location, and photos of the space where possible. Larger projects usually need an on-site visit before a firm price can be given.</p></details></div>
+  <div class="mcr-faq-card"><div class="mcr-faq"><details><summary>What is the average carpenter's day rate in the UK?</summary><p>Typically &pound;200&ndash;&pound;300 a day, depending on experience, location and the complexity of the work. Specialist or bespoke joinery can go higher.</p></details><details><summary>Do carpenters charge VAT?</summary><p>Some do, some don't. Registration is required once turnover passes &pound;90,000 a year, though smaller businesses can register voluntarily below that.</p></details><details><summary>Why has carpentry got more expensive?</summary><p>Mainly the 2021&ndash;22 spike in timber prices, alongside rising fuel, tool, insurance and van costs since then. Prices haven't kept climbing every year, but they haven't come back to pre-2020 levels either.</p></details><details><summary>How much does timber cost?</summary><p>It depends on the type. Basic pine can be a few pounds a length; oak and specialist timbers can run to tens of pounds per board, and full sheets of MDF typically sit between &pound;25 and &pound;65 depending on grade and finish.</p></details><details><summary>How much do a carpenter's tools cost?</summary><p>A working professional can easily have several thousand pounds invested in power tools alone, before hand tools, storage and a van.</p></details><details><summary>Can carpentry add value to a house?</summary><p>Well-designed fitted storage and joinery can make awkward spaces usable and give a home a more finished feel, particularly in alcoves, sloped ceilings, and underused corners.</p></details><details><summary>How do I get a quote?</summary><p>Send over what you'd like doing, your location, and photos of the space where possible. Larger projects usually need an on-site visit before a firm price can be given.</p></details></div></div>
 
   <div class="mcr-article-cta">
     <h3>Still have a question?</h3>
