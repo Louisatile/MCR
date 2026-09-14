@@ -163,6 +163,12 @@
       display: inline-flex; margin-top: 6px; padding: 13px 34px;
       border: 1px solid #C4A77C; border-radius: 4px; color: #C4A77C !important; font-size: 16px;
     }
+    .mcr-nav-links.mcr-nav-open .mcr-dropdown-menu-inner {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .mcr-nav-links.mcr-nav-open .mcr-dropdown-menu a.mcr-nav-link {
+      display: block;
+    }
   }
   @media (max-width: 900px) {
     .mcr-hero-wrap { min-height: 80vh; display: flex; flex-direction: column; }
@@ -189,59 +195,37 @@
   .mcr-trust-strip {
     position: relative;
     z-index: 5;
-    background: #FFFFFF;
-    border-radius: 16px;
-    box-shadow: 0 24px 50px rgba(15,33,28,0.18);
-    max-width: 1080px;
-    margin: -60px auto 0;
-    padding: 26px 4%;
+    background: #F7F6F3;
+    border-top: 1px solid rgba(138,111,69,0.25);
+    border-bottom: 1px solid rgba(138,111,69,0.25);
+    padding: 22px 6%;
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 0;
+    row-gap: 14px;
+    column-gap: 44px;
     font-family: 'Inter', Arial, sans-serif;
   }
   .mcr-trust-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 6px 28px;
-    position: relative;
+    gap: 10px;
     color: #17251F;
-    font-size: 11px;
+    font-size: 12.5px;
     font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
-  .mcr-trust-item:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 22px;
-    width: 1px;
-    background: rgba(23,37,31,0.12);
-  }
-  .mcr-trust-icon {
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: rgba(138,111,69,0.12);
-    border: 1px solid rgba(138,111,69,0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .mcr-trust-item svg { width: 14px; height: 14px; color: #8a6f45; flex-shrink: 0; }
+  .mcr-trust-item svg { width: 18px; height: 18px; color: #8a6f45; flex-shrink: 0; }
   @media (max-width: 640px) {
-    .mcr-trust-strip { margin: -40px 5% 0; padding: 18px 4%; row-gap: 16px; border-radius: 14px; }
-    .mcr-trust-item { width: 50%; padding: 4px 10px; font-size: 9.5px; letter-spacing: 0.09em; gap: 9px; }
-    .mcr-trust-item:not(:last-child)::after { display: none; }
-    .mcr-trust-icon { width: 26px; height: 26px; }
-    .mcr-trust-item svg { width: 12px; height: 12px; }
+    .mcr-trust-strip {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 14px;
+      column-gap: 0;
+      padding: 20px 8%;
+    }
+    .mcr-trust-item { font-size: 12px; }
   }
 </style>
 
@@ -332,13 +316,6 @@
       <a class="mcr-pill-btn mcr-pill-outline" href="https://maltings-carpentry-renovations.co.uk/gallery.html">View our work</a>
     </div>
   </div>
-</div>
-
-<div class="mcr-trust-strip">
-  <span class="mcr-trust-item"><span class="mcr-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 10l-5 4.5 1.5 7L12 18l-5.5 3.5 1.5-7L3 10l6.5-1.5z"/></svg></span>15+ years' experience</span>
-  <span class="mcr-trust-item"><span class="mcr-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>100% independent and local</span>
-  <span class="mcr-trust-item"><span class="mcr-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Fully insured</span>
-  <span class="mcr-trust-item"><span class="mcr-trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3.83A2 2 0 0 0 9.59 3.17L3 3l-.17 6.59a2 2 0 0 0 .58 1.42l9.58 9.58a2 2 0 0 0 2.83 0l4.77-4.77a2 2 0 0 0 0-2.83z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>Free quotes</span>
 </div>
 
 
@@ -537,6 +514,12 @@
   </div>
 </section>
 
+<div class="mcr-trust-strip">
+  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 10l-5 4.5 1.5 7L12 18l-5.5 3.5 1.5-7L3 10l6.5-1.5z"/></svg>15+ years' experience</span>
+  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>100% independent and local</span>
+  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fully insured</span>
+  <span class="mcr-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 3.83A2 2 0 0 0 9.59 3.17L3 3l-.17 6.59a2 2 0 0 0 .58 1.42l9.58 9.58a2 2 0 0 0 2.83 0l4.77-4.77a2 2 0 0 0 0-2.83z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Free quotes</span>
+</div>
 
 
 <!-- ==================== -->
