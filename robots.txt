@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maltings-carpentry-renovations.co.uk/sitemap.xml
